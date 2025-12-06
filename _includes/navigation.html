@@ -4,7 +4,7 @@
         {% for p in navigation_pages %}
         {% if p.navigation_weight %}
         <li>
-            <a href="{{ p.url | prepend: site.baseurl }}" {% if p.url == page.url %}class="active"{% endif %}>
+            <a href="{{ p.url }}" {% if p.url == page.url %}class="active"{% endif %}>
                 {{ p.title }}
             </a>
 			{% if p.has_subnav %}
@@ -12,7 +12,7 @@
 					{% assign subnav_pages = site.html_pages | where:"parentnav",p.title | sort: 'subnav_weight' %}
 					{% for q in subnav_pages %}
 					<li>
-						<a href="{{ q.url | prepend: site.baseurl }}">
+						<a href="{{ q.url }}">
 							{{ q.title }}
 						</a>
 					</li>
@@ -47,7 +47,7 @@
         {% for p in navigation_pages %}
         {% if p.navigation_weight %}
         <li>
-            <a href="{{ p.url | prepend: site.baseurl }}" {% if p.url == page.url %}class="active"{% endif %}>
+            <a href="{{ p.url }}" {% if p.url == page.url %}class="active"{% endif %}>
                 {{ p.title }}
             </a>
         </li>
