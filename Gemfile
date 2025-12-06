@@ -1,14 +1,7 @@
 source "https://rubygems.org"
 
 # GitHub Pages gem includes Jekyll and all compatible plugins
-gem "github-pages", "~> 231", group: :jekyll_plugins
-
-# Additional plugins for enhanced functionality
-group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.17"
-  gem "jekyll-seo-tag", "~> 2.8"
-  gem "jekyll-sitemap", "~> 1.4"
-end
+gem "github-pages", group: :jekyll_plugins
 
 # Windows and JRuby support
 platforms :mingw, :x64_mingw, :mswin, :jruby do
