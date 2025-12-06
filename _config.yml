@@ -4,8 +4,8 @@ kramdown:
 
 permalink: pretty
 
-url: "https://miniaturepancake.github.io/"
-baseurl: ""
+url: "https://subhadipchowdhury.github.io/miniaturepancake.github.io"
+baseurl: "/miniaturepancake.github.io"
 
 exclude: ['deploy', 'stylesheet.scss', 'vendor']
 

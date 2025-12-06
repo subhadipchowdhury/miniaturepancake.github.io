@@ -17,8 +17,9 @@ const SearchModule = (() => {
   init();
   
   function init() {
-    // Fetch the search index (JSON file)
-    fetch("/assets/search-index.json")
+    // Fetch the search index (JSON file) with baseurl
+    const searchIndexUrl = (window.SITE_BASEURL || '') + '/assets/search-index.json';
+    fetch(searchIndexUrl)
       .then(response => response.json())
       .then(data => {
         pages = data;
@@ -72,7 +73,7 @@ const SearchModule = (() => {
     const html = results.map(page => {
       const excerpt = getExcerpt(page.content, query, 100);
       return `
-        <a href="${page.url}" class="search-result-item">
+        <a href="${(window.SITE_BASEURL || '') + page.url}" class="search-result-item">
           <div class="search-result-title">${highlightMatches(page.title, query)}</div>
           <div class="search-result-excerpt">${excerpt}</div>
         </a>
