@@ -1,27 +1,43 @@
 <head>
 
-	<script type="text/javascript" async
-		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	<!-- MathJax 3.2.2 for LaTeX rendering -->
+	<script>
+		MathJax = {
+			tex: { 
+				inlineMath: [['$', '$']], 
+				displayMath: [['$$', '$$']] 
+			},
+			svg: { 
+				fontCache: 'global'
+			},
+			startup: { 
+				pageReady: () => {
+					return MathJax.typesetPromise();
+				}
+			}
+		};
 	</script>
+	<script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script>
 
-		
+	<!-- Preload critical fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Encode+Sans+Condensed&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;0,800;1,400&family=Raleway:wght@400;500;600;700&family=Alegreya+Sans+SC:wght@700&family=Encode+Sans+Condensed&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;0,800;1,400&family=Raleway:wght@400;500;600;700&family=Alegreya+Sans+SC:wght@700&family=Encode+Sans+Condensed&display=swap">
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 	<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon_32.png">
-
 	<link rel="icon" href="/assets/icons/favicon_192.png" sizes="192x192" />
-	
 	<link rel="apple-touch-icon" href="assets/icons/favicon_apple.png" />	
 
 	<link rel="stylesheet" href="/css/stylesheet.css">
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="/javascript/navigation.js"></script>
+	<!-- Modern navigation and search (no jQuery) -->
+	<script src="/javascript/navigation.js" defer></script>
+	<script src="/javascript/search.js" defer></script>
 	
+	<!-- Nutshell.js for collapsible explanations -->
 	<script src="https://cdn.jsdelivr.net/gh/ncase/nutshell/nutshell.js"></script>
 	<script>
 		Nutshell.setOptions({
@@ -29,9 +45,9 @@
 		});
 	</script>
 	
-	<meta name="viewport" content="width=device-width, height=device-height">
-	
-	<meta name="description" content="My personal webpage.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Academic portfolio of Subhadip Chowdhury.">
+	<meta name="theme-color" content="#155F83">
 
 	<title>{% if page.title != "Home" %} {{ page.title }} | {% endif %}Subhadip Chowdhury</title>
 	
