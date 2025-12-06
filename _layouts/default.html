@@ -1,0 +1,23 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	
+	{% include head.html %}
+
+	<header>
+		<h1><a href="/">Subhadip Chowdhury</a></h1>
+        {% include navigation.html %} 
+	</header>
+
+	<body>
+		
+		<div class="main-wrapper">
+		{{ content }}
+		</div>
+		{% include footer.html %}
+	</body>
+
+</html>
