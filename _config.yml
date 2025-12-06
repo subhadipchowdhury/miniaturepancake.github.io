@@ -4,9 +4,10 @@ kramdown:
 
 permalink: pretty
 
-url: "https://subhadipchowdhury.github.io/"
-  
-exclude: ['deploy', 'stylesheet.scss']
+url: "https://miniaturepancake.github.io/"
+baseurl: ""
+
+exclude: ['deploy', 'stylesheet.scss', 'vendor']
 
 analytics_id: "UA-36444201-2"
 
